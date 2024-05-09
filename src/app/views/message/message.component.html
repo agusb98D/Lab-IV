@@ -1,0 +1,18 @@
+<input type="text" [(ngModel)]="message">
+
+<button (click)="onSend()">
+  Enviar Mensaje
+</button>
+
+
+
+
+@if(items$ | async; as items) {
+  <br><br><br><br><br>
+
+  @for (item of items; track item) {
+    <p>
+      {{ item.code + ': ' + item.content }}
+    </p>
+  }
+}
