@@ -1,0 +1,51 @@
+<div class="container">
+  <h3 class="text-center">Animaciones</h3>
+
+  <button (click)="mostrarOcultar()" class="btn btn-primary">
+    Mostrar/Ocultar
+  </button>
+
+  <hr>
+
+  @if(mostrarContenido) {
+    <div>
+      <h4>Titulo sin animacion</h4>
+
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, facere
+        aliquid, eius quae praesentium fugit similique impedit nobis voluptatum
+        neque atque voluptates, sint quod possimus eos quia. Minus, cum magnam!
+      </p>
+    </div>
+  }
+
+  <!-- Metodo 1 -->
+  <div [@mostrarOcultarTrigger]="mostrarContenido ? 'abierto' : 'cerrado'"
+    (@mostrarOcultarTrigger.start)="onAnimation($event)" (@mostrarOcultarTrigger.done)="onAnimation($event)">
+
+    <h4>Titulo con animacion</h4>
+
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, facere
+      aliquid, eius quae praesentium fugit similique impedit nobis voluptatum
+      neque atque voluptates, sint quod possimus eos quia. Minus, cum magnam!
+    </p>
+
+  </div>
+
+
+  <!-- Metodo 2 -->
+  @if(mostrarContenido) {
+    <div @mostrarOcultarTrigger>
+      <h4>Titulo con animacion</h4>
+
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, facere
+        aliquid, eius quae praesentium fugit similique impedit nobis voluptatum
+        neque atque voluptates, sint quod possimus eos quia. Minus, cum magnam!
+      </p>
+    </div>
+  }
+
+
+</div>

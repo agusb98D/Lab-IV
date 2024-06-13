@@ -8,6 +8,7 @@ export const routes: Routes = [
   // Componentes Standalone
   { path: 'home', loadComponent: () => import('./views/home/home.component').then(c => c.HomeComponent) },
   { path: 'message', loadComponent: () => import('./views/message/message.component').then(c => c.MessageComponent) },
+  { path: 'animation', loadComponent: () => import('./views/animation/animation.component').then(c => c.AnimationComponent) },
   { path: 'page-not-found', loadComponent: () => import('./views/error/error.component').then(c => c.ErrorComponent) },
 
 
